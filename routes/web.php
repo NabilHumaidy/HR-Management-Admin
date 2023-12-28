@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +17,8 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//User Route
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -35,4 +39,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+//End User Route
+
+//Admin Route
+
+    //Product Route
+
+
+//End Admin Route
 require __DIR__.'/auth.php';

@@ -2,7 +2,7 @@ import GuestLayout from '@/Layouts/GuestLayout';
 import InputError from '@/Components/InputError';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
-import { Head, useForm } from '@inertiajs/react';
+import { Head, Link, useForm } from '@inertiajs/react';
 
 export default function ForgotPassword({ status }) {
     const { data, setData, post, processing, errors } = useForm({
@@ -18,8 +18,12 @@ export default function ForgotPassword({ status }) {
     return (
         <GuestLayout>
             <Head title="Forgot Password" />
-
+            <Link className='flex mb-[30px] gap-2 items-center ' href='/login'><img src="img/arrow-left.svg" alt="" /><p>Back</p></Link>
+            <div className='font-lexend text-[30px] font-bold mb-[5px]'>
+            <h1>Forgot Password</h1>
+            </div>
             <div className="mb-4 text-sm text-gray-600">
+               
                 Forgot your password? No problem. Just let us know your email address and we will email you a password
                 reset link that will allow you to choose a new one.
             </div>

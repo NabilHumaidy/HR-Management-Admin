@@ -2,5 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+global{
+    font-family: Lexend;
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
