@@ -9,6 +9,7 @@ import { Head, Link, useForm } from '@inertiajs/react';
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
         name: '',
+        role: '',
         email: '',
         password: '',
         password_confirmation: '',
@@ -47,6 +48,7 @@ export default function Register() {
 
                     <InputError message={errors.name} className="mt-2" />
                 </div>
+
 
                 <div className="mt-4">
                     <InputLabel htmlFor="email" value="Email" />
