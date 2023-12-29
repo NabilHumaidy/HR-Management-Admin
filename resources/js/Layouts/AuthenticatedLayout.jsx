@@ -37,8 +37,13 @@ export default function Authenticated({ user, header, headerAlt,children }) {
                             
                         </div>
                     </div>
-                    <div>
-                        <div className={`flex-grow md:overflow-y-auto mt-7 me-5 ${openSideBar ? '' : 'ms-5'}`}>{children}</div>
+                </div>
+
+                <div className={(showingNavigationDropdown ? 'block' : 'hidden') + ' sm:hidden'}>
+                    <div className="pt-2 pb-3 space-y-1">
+                        <ResponsiveNavLink href={route('dashboard')} active={route().current('dashboard')}>
+                            Dashboard
+                        </ResponsiveNavLink>
                     </div>
                     
                 </div>
