@@ -10,12 +10,12 @@ export default function Navbar(account) {
         <>
             <div className="hidden md:flex sm:items-center sm:ms-6">
                 <div className='flex rounded-lg border'>
-                    <img src="image/svg/search.svg" alt="" className='pl-[10px]' />
+                    <img src="/image/svg/search.svg" alt="" className='pl-[10px]' />
                     <input type="text" placeholder="Search" className='rounded-lg opacity-30 border-0' />
                 </div>
                 <div className="ms-3 relative flex gap-[20px] items-center">
                     <div className='flex w-[50px] h-[40px] bg-gray-100 rounded-md items-center justify-center'>
-                        <img src="http://127.0.0.1:8000/image/svg/notification.svg" alt="" className='flex w-[35px] h-[35px]  items-center justify-center ' />
+                        <img src="/image/svg/notification.svg" alt="" className='flex w-[35px] h-[35px]  items-center justify-center ' />
                     </div>
                     <Dropdown>
                         <Dropdown.Trigger>

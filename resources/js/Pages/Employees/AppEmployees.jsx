@@ -11,7 +11,7 @@ export default function AppEmployees({auth}) {
                 header='All Employees'
                 headerAlt='All Employee Information'
             >
-                Test
+                test
                 
             </AuthenticatedLayout>
         </>
