@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -29,9 +30,17 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard/employees', [DashboardController::class, 'employees'])->middleware(['auth', 'verified'])->name('employees');
+Route::get('/dashboard/departments', [DashboardController::class, 'departments'])->middleware(['auth', 'verified'])->name('departments');
+Route::get('/dashboard/attendance', [DashboardController::class, 'attendance'])->middleware(['auth', 'verified'])->name('attendance');
+Route::get('/dashboard/payroll', [DashboardController::class, 'payroll'])->middleware(['auth', 'verified'])->name('payroll');
+Route::get('/dashboard/jobs', [DashboardController::class, 'jobs'])->middleware(['auth', 'verified'])->name('jobs');
+Route::get('/dashboard/candidates', [DashboardController::class, 'candidates'])->middleware(['auth', 'verified'])->name('candidates');
+Route::get('/dashboard/leaves', [DashboardController::class, 'leaves'])->middleware(['auth', 'verified'])->name('leaves');
+Route::get('/dashboard/holidays', [DashboardController::class, 'holidays'])->middleware(['auth', 'verified'])->name('holidays');
+Route::get('/dashboard/settings', [DashboardController::class, 'settings'])->middleware(['auth', 'verified'])->name('settings');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

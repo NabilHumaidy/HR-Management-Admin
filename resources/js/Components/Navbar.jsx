@@ -15,7 +15,7 @@ export default function Navbar(account) {
                 </div>
                 <div className="ms-3 relative flex gap-[20px] items-center">
                     <div className='flex w-[50px] h-[40px] bg-gray-100 rounded-md items-center justify-center'>
-                        <img src="image/svg/notification.svg" alt="" className='flex w-[35px] h-[35px]  items-center justify-center ' />
+                        <img src="http://127.0.0.1:8000/image/svg/notification.svg" alt="" className='flex w-[35px] h-[35px]  items-center justify-center ' />
                     </div>
                     <Dropdown>
                         <Dropdown.Trigger>
@@ -46,8 +46,8 @@ export default function Navbar(account) {
                         </Dropdown.Trigger>
 
                         <Dropdown.Content>
-                            <Dropdown.Link href={route('profile.edit')}>Profile</Dropdown.Link>
-                            <Dropdown.Link href={route('logout')} method="post" as="button">
+                            <Dropdown.Link href={route('profile.edit')}>My Profile</Dropdown.Link>
+                            <Dropdown.Link href={route('logout')} method="post" as="button" className='text-red-600'>
                                 Log Out
                             </Dropdown.Link>
                         </Dropdown.Content>

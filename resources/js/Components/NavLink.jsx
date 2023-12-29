@@ -17,16 +17,16 @@ export default function NavLink() {
         setDelayedLink(timeoutId);
     };
     const sideLink = [
-        {title: 'Dashboard', logoOutline: 'dashboardOutline.svg', logoSolid:'dashboardSolid.svg', location: 'dashboard', route: 'dashboard'},
-        {title: 'All Employees', logoOutline: 'employeesOutline.svg', logoSolid:'employeesSolid.svg', location: 'dashboard/employees', route: 'employees'},
-        {title: 'All Departments', logoOutline: 'departmentsOutline.svg', logoSolid:'departmentsSolid.svg', location: 'dashboard/departments', route: 'dapertments'},
-        {title: 'Attendance', logoOutline: 'attendanceOutline.svg', logoSolid:'attendanceSolid.svg', location: 'dashboard/attendance', route: 'attendance'},
-        {title: 'Payroll', logoOutline: 'payrollOutline.svg', logoSolid:'payrollSolid.svg', location: 'dashboard/payroll', route: 'payroll'},
-        {title: 'Jobs', logoOutline: 'jobsOutline.svg', logoSolid:'jobsSolid.svg', location: 'dashboard/jobs', route: 'jobs'},
-        {title: 'Candidates', logoOutline: 'candidatesOutline.svg', logoSolid:'candidatesSolid.svg', location: 'dashboard/candidates', route: 'candidates'},
-        {title: 'Leaves', logoOutline: 'leavesOutline.svg', logoSolid:'leavesSolid.svg', location: 'dashboard/leaves', route: 'leaves'},
-        {title: 'Holidays', logoOutline: 'holidayOutline.svg', logoSolid:'holidaySolid.svg', location: 'dashboard/holidays', route: 'holidays'},
-        {title: 'Settings', logoOutline: 'settingOutline.svg', logoSolid:'settingSolid.svg', location: 'dashboard/settings', route: 'settings'},
+        {title: 'Dashboard', logoOutline: 'dashboardOutline.svg', logoSolid:'dashboardSolid.svg', location: '/dashboard', route: 'dashboard'},
+        {title: 'All Employees', logoOutline: 'employeesOutline.svg', logoSolid:'employeesSolid.svg', location: '/dashboard/employees', route: 'employees'},
+        {title: 'All Departments', logoOutline: 'departmentsOutline.svg', logoSolid:'departmentsSolid.svg', location: '/dashboard/departments', route: 'departments'},
+        {title: 'Attendance', logoOutline: 'attendanceOutline.svg', logoSolid:'attendanceSolid.svg', location: '/dashboard/attendance', route: 'attendance'},
+        {title: 'Payroll', logoOutline: 'payrollOutline.svg', logoSolid:'payrollSolid.svg', location: '/dashboard/payroll', route: 'payroll'},
+        {title: 'Jobs', logoOutline: 'jobsOutline.svg', logoSolid:'jobsSolid.svg', location: '/dashboard/jobs', route: 'jobs'},
+        {title: 'Candidates', logoOutline: 'candidatesOutline.svg', logoSolid:'candidatesSolid.svg', location: '/dashboard/candidates', route: 'candidates'},
+        {title: 'Leaves', logoOutline: 'leavesOutline.svg', logoSolid:'leavesSolid.svg', location: '/dashboard/leaves', route: 'leaves'},
+        {title: 'Holidays', logoOutline: 'holidayOutline.svg', logoSolid:'holidaySolid.svg', location: '/dashboard/holidays', route: 'holidays'},
+        {title: 'Settings', logoOutline: 'settingOutline.svg', logoSolid:'settingSolid.svg', location: '/dashboard/settings', route: 'settings'},
     ];
     return (
         <>
