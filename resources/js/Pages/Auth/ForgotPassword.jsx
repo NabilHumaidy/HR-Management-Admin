@@ -18,7 +18,7 @@ export default function ForgotPassword({ status }) {
     return (
         <GuestLayout>
             <Head title="Forgot Password" />
-            <Link className='flex mb-[30px] gap-2 items-center ' href='/login'><img src="img/arrow-left.svg" alt="" /><p>Back</p></Link>
+            <Link className='flex mb-[30px] gap-2 items-center ' href='/login'><img src="image/svg/arrow-left.svg" alt="" /><p>Back</p></Link>
             <div className='font-lexend text-[30px] font-bold mb-[5px]'>
             <h1>Forgot Password</h1>
             </div>
