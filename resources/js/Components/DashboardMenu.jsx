@@ -1,12 +1,15 @@
 import React from 'react'
-
 import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image} from "@nextui-org/react";
 import {NextUIProvider} from "@nextui-org/react";
 import { Calendar } from "@/Components/ui/calendar"
 import { LucideCalendar } from 'lucide-react';
 
-export const DashboardMenu = () => {
-   
+
+export function CalendarDemo() {
+    const [date, setDate] = React.useState<Date | undefined>(new Date())
+const DashboardMenu = () => {
+ 
+
   return (
     <>
     <div className='grid grid-cols-3  '>
@@ -134,9 +137,12 @@ export const DashboardMenu = () => {
             </div>
             
     </>
-  )
+    )
 }
 
+
+}
+export default DashboardMenu   
 
 
 
