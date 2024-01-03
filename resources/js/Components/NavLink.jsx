@@ -13,7 +13,7 @@ export default function NavLink() {
     const handleMouseLeave = (index) => {
         const timeoutId = setTimeout(() => {
             setHoveredLink(null);
-        }, 200); // Ganti dengan durasi delay yang diinginkan (dalam milidetik)
+        }, 200);
         setDelayedLink(timeoutId);
     };
     const sideLink = [

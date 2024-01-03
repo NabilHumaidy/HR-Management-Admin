@@ -14,8 +14,8 @@ export default function Navbar(account) {
                     <input type="text" placeholder="Search" className='rounded-lg opacity-30 border-0' />
                 </div>
                 <div className="ms-3 relative flex gap-[20px] items-center">
-                    <div className='flex w-[50px] h-[40px] bg-gray-100 rounded-md items-center justify-center'>
-                        <img src="/image/svg/notification.svg" alt="" className='flex w-[35px] h-[35px]  items-center justify-center ' />
+                    <div className='flex w-[50px] h-[50px] bg-gray-100 rounded-md items-center justify-center'>
+                        <img src="/image/svg/notification.svg" alt="" className='flex h-6  items-center justify-center ' />
                     </div>
                     <Dropdown>
                         <Dropdown.Trigger>

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Inertia\Inertia;
+use App\Models\Department;
+use App\Models\User;
+use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
@@ -14,7 +16,9 @@ class DashboardController extends Controller
         return Inertia::render('Employees/AppEmployees');
     }
     public function departments(){
-        return Inertia::render('Departments/AppDepartments');
+        $departments = Department::all();
+        $employee = User::all();
+        return Inertia::render('Departments/AppDepartments', ['departments' => $departments, 'employee' => $employee]);
     }
     public function attendance(){
         return Inertia::render('Attendance/AppAttendance');
