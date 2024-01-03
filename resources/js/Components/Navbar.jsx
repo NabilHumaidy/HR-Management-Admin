@@ -10,7 +10,7 @@ export default function Navbar(account) {
         <>
             <div className="hidden md:flex sm:items-center sm:ms-6 pr-[30px]">
                 <div className='inline-flex rounded-lg border'>
-                    <img src="image/svg/search.svg" alt="" className='pl-[10px]' />
+                    <img src="/image/svg/search.svg" alt="" className='pl-[10px]' />
                     <input type="text" placeholder="Search" className='border-0 rounded-md opacity-40 border-transparent focus:border-transparent focus:ring-0' />
                 </div>
                 <div className="ms-3 relative flex gap-[20px] items-center">
