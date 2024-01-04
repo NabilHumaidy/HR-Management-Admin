@@ -8,17 +8,10 @@ export default function Navbar(account) {
     let user = account.account;
     return (
         <>
-<<<<<<< HEAD
             <div className="hidden md:flex sm:items-center sm:ms-6 pr-[30px]">
                 <div className='inline-flex rounded-lg border'>
-                    <img src="image/svg/search.svg" alt="" className='pl-[10px]' />
-                    <input type="text" placeholder="Search" className='border-0 rounded-md opacity-40 border-transparent focus:border-transparent focus:ring-0' />
-=======
-            <div className="hidden md:flex sm:items-center sm:ms-6">
-                <div className='flex rounded-lg border'>
                     <img src="/image/svg/search.svg" alt="" className='pl-[10px]' />
-                    <input type="text" placeholder="Search" className='rounded-lg opacity-30 border-0' />
->>>>>>> 675c5acf5f40c923359891de2bc9e063fbec38a9
+                    <input type="text" placeholder="Search" className='border-0 rounded-md opacity-40 border-transparent focus:border-transparent focus:ring-0' />
                 </div>
                 <div className="ms-3 relative flex gap-[20px] items-center">
                     <div className='flex w-[50px] h-[50px] bg-gray-100 rounded-md items-center justify-center'>
@@ -57,13 +50,8 @@ export default function Navbar(account) {
                         </Dropdown.Trigger>
 
                         <Dropdown.Content>
-<<<<<<< HEAD
-                            <Dropdown.Link href={route('profile.edit')}>Profile</Dropdown.Link>
-                            <Dropdown.Link href={route('logout')} method="post" className='text-red-600' as="button">
-=======
                             <Dropdown.Link href={route('profile.edit')}>My Profile</Dropdown.Link>
                             <Dropdown.Link href={route('logout')} method="post" as="button" className='text-red-600'>
->>>>>>> 675c5acf5f40c923359891de2bc9e063fbec38a9
                                 Log Out
                             </Dropdown.Link>
                         </Dropdown.Content>

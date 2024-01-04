@@ -28,9 +28,24 @@ import { HiBars3, HiXMark } from "react-icons/hi2";
 
 export default function Authenticated({ user, header, headerAlt,children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
-    const [ openSideBar, setOpenSideBar ] = useState(true);
+    const [ openSideBar, setOpenSideBar ] = useState(false);
     const { bodyClass } = usePage();
->>>>>>> 675c5acf5f40c923359891de2bc9e063fbec38a9
+    useEffect(() => {
+        // Fungsi untuk menangani perubahan ukuran layar
+        const handleResize = () => {
+          // Sesuaikan nilai openSideBar sesuai dengan ukuran layar
+          setOpenSideBar(window.innerWidth >= 1024); // Misalnya, atur nilai 768 sebagai batas ukuran layar untuk mode desktop
+        };
+    
+        // Panggil handleResize saat komponen dimuat dan saat ukuran layar berubah
+        handleResize();
+        window.addEventListener('resize', handleResize);
+    
+        // Membersihkan event listener saat komponen dibongkar
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+      }, []); // useEffect hanya dipanggil sekali saat komponen dimuat
 
     // Menghapus kelas text-sans jika ada
     document.body.classList.remove('font-sans', 'antialiased');
