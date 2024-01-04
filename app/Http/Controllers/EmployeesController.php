@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
 use App\Models\Employees;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -14,7 +15,10 @@ class EmployeesController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Employees/AddEmployees');
+        $department  = Department::get();
+        return Inertia::render('Employees/AddEmployees',[
+            'departments' => $department,
+        ]);
     }
 
     /**

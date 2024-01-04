@@ -23,7 +23,7 @@ export default function AppEmployees({auth}) {
                         <div className='flex gap-5 justify-between md:justify-normal'>
                             <Link href='employees/add'><Button className='gap-2 text-white bg-primary-500 p-2 md:p-3 rounded-xl' startContent={<HiOutlinePlusCircle size={25}/>}>Add New Employee</Button></Link>
                             
-                            <Button className='gap-2 p-2 md:p-3 rounded-xl border' startContent={<TbAdjustmentsHorizontal size={25}/>}>Filter</Button>
+                            <Button className='gap-2 p-2 md:p-3 bg-white rounded-xl border' startContent={<TbAdjustmentsHorizontal size={25}/>}>Filter</Button>
                         </div>
                     </div>
                     <div className='pt-8 w-full'>
