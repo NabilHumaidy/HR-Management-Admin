@@ -18,7 +18,7 @@ export default function AppEmployees({auth}) {
                     <div className='flex flex-col md:flex-row justify-between'>
                         <div className='flex rounded-lg border items-center mb-3 md:mb-0'>
                             <img src="/image/svg/search.svg" alt="" className='pl-[10px] h-6 ' />
-                            <input type="text" placeholder="Search" className='rounded-lg opacity-30 border-0 w-full' />
+                            <input type="text" placeholder="Search" className='border-0 rounded-md opacity-40 border-transparent focus:border-transparent focus:ring-0' />
                         </div>
                         <div className='flex gap-5 justify-between md:justify-normal'>
                             <Link href='employees/add'><Button className='gap-2 text-white bg-primary-500 p-2 md:p-3 rounded-xl' startContent={<HiOutlinePlusCircle size={25}/>}>Add New Employee</Button></Link>

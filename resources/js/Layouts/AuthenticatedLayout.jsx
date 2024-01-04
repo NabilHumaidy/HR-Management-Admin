@@ -7,6 +7,7 @@ import { Link, usePage } from '@inertiajs/react';
 import { SideBar } from '@/Components/SideBar';
 import Navbar from '@/Components/NavBar';
 import { HiBars3, HiXMark } from "react-icons/hi2";
+import DashboardMenu from '@/Components/DashboardMenu';
 
 export default function Authenticated({ user, header, headerAlt,children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);

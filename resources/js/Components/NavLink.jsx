@@ -33,9 +33,9 @@ export default function NavLink() {
             {sideLink.map((link, i) => {
                 return(
                     <Link href={link.location} key={i} className={'transition-all flex mx-6 ps-3 py-2 gap-4 items-center hover:font-semibold hover:border-l-4 border-primary-500 hover:text-primary-500 hover:bg-[#7152F30D] rounded-br-xl rounded-tr-xl ' + (route().current(link.route) && ' font-semibold border-l-4 text-primary-500 bg-[#7152F30D]')} onMouseEnter={() => handleMouseEnter(i)} onMouseLeave={() => handleMouseLeave(i)}>
-                        <img src={`/image/svg/${hoveredLink === i ? link.logoSolid : route().current(link.route) ? link.logoSolid : link.logoOutline}`} className=''/>
-                        <p className='text-xs xl:text-sm'>{link.title}</p>
-                    </Link>
+                    <img src={`/image/svg/${hoveredLink === i ? link.logoSolid : route().current(link.route) ? link.logoSolid : link.logoOutline}`} className=''/>
+                    <p className='text-xs xl:text-sm'>{link.title}</p>
+                </Link>
                 );
                 
             })}
