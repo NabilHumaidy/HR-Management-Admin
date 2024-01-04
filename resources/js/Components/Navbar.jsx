@@ -7,14 +7,14 @@ export default function Navbar(account) {
     let user = account.account;
     return (
         <>
-            <div className="hidden md:flex sm:items-center sm:ms-6">
-                <div className='flex rounded-lg border'>
+            <div className="hidden md:flex sm:items-center sm:ms-6 pr-[30px]">
+                <div className='inline-flex rounded-lg border'>
                     <img src="/image/svg/search.svg" alt="" className='pl-[10px]' />
-                    <input type="text" placeholder="Search" className='rounded-lg opacity-30 border-0' />
+                    <input type="text" placeholder="Search" className='border-0 rounded-md opacity-40 border-transparent focus:border-transparent focus:ring-0' />
                 </div>
                 <div className="ms-3 relative flex gap-[20px] items-center">
-                    <div className='flex w-[50px] h-[40px] bg-gray-100 rounded-md items-center justify-center'>
-                        <img src="/image/svg/notification.svg" alt="" className='flex w-[35px] h-[35px]  items-center justify-center ' />
+                    <div className='flex w-[50px] h-[50px] bg-gray-100 rounded-md items-center justify-center'>
+                        <img src="/image/svg/notification.svg" alt="" className='flex h-6  items-center justify-center ' />
                     </div>
                     <Dropdown>
                         <Dropdown.Trigger>
@@ -23,8 +23,13 @@ export default function Navbar(account) {
                                 <button
                                     type="button"
                                     className="inline-flex items-center px-[5px] pb-[15px] border border-transparent  leading-4 font-medium rounded-md text-base bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
-                                >
+                                >   
+                                <div className='flex flex-col'>
                                     {user.name}
+                                    <div className='text-gray-400 opacity-60'>
+                                    {user.role}
+                                    </div>
+                                    </div>
                                     <svg
                                         className="ms-2 -me-0.5 h-4 w-4"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -41,8 +46,12 @@ export default function Navbar(account) {
                             </span>
                         </Dropdown.Trigger>
                         <Dropdown.Content>
-                            <Dropdown.Link href={route('profile.edit')}>My Profile</Dropdown.Link>
-                            <Dropdown.Link href={route('logout')} method="post" as="button" className='text-red-600'>
+                            <Dropdown.Link href={route('profile.edit')} className='flex gap-2'>
+                                <img src="/image/svg/profile.svg" alt="" />
+                                My Profile
+                                </Dropdown.Link>
+                            <Dropdown.Link href={route('logout')} method="post" as="button" className='flex text-red-600 gap-2' >
+                            <img src="/image/svg/logout.svg" alt="" />
                                 Log Out
                             </Dropdown.Link>
                         </Dropdown.Content>

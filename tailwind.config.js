@@ -38,7 +38,8 @@ export default {
                     '600': '#5D3DE7',
                     '700': '#4F31D0',
                     '800': '#3517B4',
-                    '900': '#250C92'
+                    '900': '#250C92',
+                    'merah' : '#F45B69'
                 },
                 secondary: {
                     '100': '#E1F1BC',
@@ -67,61 +68,13 @@ export default {
                 '1': '#30BE82',
                 '2': '#30BEB6',
                 '3': '#5D30BE',
-                '4': '#304FBE',
-
-                border: "hsl(var(--border))",
-          input: "hsl(var(--input))",
-          ring: "hsl(var(--ring))",
-          background: "hsl(var(--background))",
-          foreground: "hsl(var(--foreground))",
-          
-          secondary: {
-            DEFAULT: "hsl(var(--secondary))",
-            foreground: "hsl(var(--secondary-foreground))",
-          },
-          destructive: {
-            DEFAULT: "hsl(var(--destructive))",
-            foreground: "hsl(var(--destructive-foreground))",
-          },
-          muted: {
-            DEFAULT: "hsl(var(--muted))",
-            foreground: "hsl(var(--muted-foreground))",
-          },
-          accent: {
-            DEFAULT: "hsl(var(--accent))",
-            foreground: "hsl(var(--accent-foreground))",
-          },
-          popover: {
-            DEFAULT: "hsl(var(--popover))",
-            foreground: "hsl(var(--popover-foreground))",
-          },
-          card: {
-            DEFAULT: "hsl(var(--card))",
-            foreground: "hsl(var(--card-foreground))",
-          },
-        },
-        keyframes: {
-          "accordion-down": {
-            from: { height: "0" },
-            to: { height: "var(--radix-accordion-content-height)" },
-          },
-          "accordion-up": {
-            from: { height: "var(--radix-accordion-content-height)" },
-            to: { height: "0" },
-          },
-        },
-        animation: {
-          "accordion-down": "accordion-down 0.2s ease-out",
-          "accordion-up": "accordion-up 0.2s ease-out",
-          
-                
+                '4': '#304FBE',            
             }
         },
         
     },
 
     darkMode: "class",
-    plugins: [require("tailwindcss-animate")],
     plugins: [nextui()],  
     plugins: [forms],
 };

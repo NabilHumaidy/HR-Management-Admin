@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -31,8 +33,14 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::get('/dashboard/employees', [DashboardController::class, 'employees'])->middleware(['auth', 'verified'])->name('employees');
+Route::get('/dashboard/employees/add', [EmployeesController::class, 'index'])->middleware(['auth', 'verified'])->name('addemployees');
+Route::post('/dashboard/employees/add', [EmployeesController::class, 'store'])->middleware(['auth', 'verified'])->name('storeemployees');
+
 Route::get('/dashboard/departments', [DashboardController::class, 'departments'])->middleware(['auth', 'verified'])->name('departments');
+Route::post('/dashboard/departments/add', [DepartmentController::class, 'store'])->middleware(['auth', 'verified'])->name('storedepartment');
+
 Route::get('/dashboard/attendance', [DashboardController::class, 'attendance'])->middleware(['auth', 'verified'])->name('attendance');
 Route::get('/dashboard/payroll', [DashboardController::class, 'payroll'])->middleware(['auth', 'verified'])->name('payroll');
 Route::get('/dashboard/jobs', [DashboardController::class, 'jobs'])->middleware(['auth', 'verified'])->name('jobs');

@@ -14,8 +14,8 @@ export const SideBar = () => {
                         <p className='text-black text-2xl font-medium'>HRMS</p>
                     </div>
                 </Link>
-                <div className="flex grow flex-row justify-between md:flex-col overflow-auto">
-                    <div className="hidden h-auto w-full grow bg-[#A2A1A80D] md:block">
+                <div className="flex grow justify-between flex-col overflow-auto">
+                    <div className="h-auto w-full grow bg-[#A2A1A80D]">
                         <div className='flex justify-center flex-col gap-2'>
                             <NavLink />
                         </div>
