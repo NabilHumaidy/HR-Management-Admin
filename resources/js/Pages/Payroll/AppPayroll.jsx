@@ -6,16 +6,10 @@ import { Head, Link } from '@inertiajs/react';
 import { HiOutlinePlusCircle } from "react-icons/hi2";
 import { TbAdjustmentsHorizontal } from "react-icons/tb";
 import { Button, Pagination, Avatar, Input } from "@nextui-org/react";
-import { useReactToPrint } from 'react-to-print';
 
 export default function AppPayroll({auth}) {
     let user = auth.user
     const componentRef = useRef();
-    const handlePrint = useReactToPrint({
-        content:() => componentRef.current,
-        documentTitle: 'emp-data',
-        onAfterPrint: ()=> alert ('Print success')
-    });
 
     return (
         <>
@@ -32,7 +26,7 @@ export default function AppPayroll({auth}) {
                             <input type="text" placeholder="Search" className='rounded-md opacity-40 border-transparent outline-0' />
                         </div>
                         <div className='flex gap-5 justify-between md:justify-normal'>
-                            <Button onClick={handlePrint} className='gap-2 text-white bg-primary-500 p-2 md:p-3 rounded-xl' ><img src="/image/svg/export.svg" alt="" />Export</Button>
+                            <Button className='gap-2 text-white bg-primary-500 p-2 md:p-3 rounded-xl' ><img src="/image/svg/export.svg" alt="" />Export</Button>
                         </div>
                     </div>
                     <div ref={componentRef}  className='pt-8 w-full'>
