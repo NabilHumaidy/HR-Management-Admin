@@ -1,11 +1,22 @@
+"use client"
+
+import React, { useRef } from 'react';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link } from '@inertiajs/react';
 import { HiOutlinePlusCircle } from "react-icons/hi2";
 import { TbAdjustmentsHorizontal } from "react-icons/tb";
 import { Button, Pagination, Avatar, Input } from "@nextui-org/react";
+import { useReactToPrint } from 'react-to-print';
 
 export default function AppPayroll({auth}) {
     let user = auth.user
+    const componentRef = useRef();
+    const handlePrint = useReactToPrint({
+        content:() => componentRef.current,
+        documentTitle: 'emp-data',
+        onAfterPrint: ()=> alert ('Print success')
+    });
+
     return (
         <>
             <Head title="Payroll" />
@@ -14,20 +25,20 @@ export default function AppPayroll({auth}) {
                 header='Payroll'
                 headerAlt='All Employee Payroll'
             >
-                <div className='h-full border p-5 rounded-xl'>
+                <div  className=' h-full border p-5 rounded-xl'>
                     <div className='flex flex-col md:flex-row justify-between'>
-                        <div className='flex rounded-lg border items-center mb-3 md:mb-0'>
+                        <div className='flex rounded-lg border items-center mb-3 md:mb-0 gap-2'>
                             <img src="/image/svg/search.svg" alt="" className='pl-[10px] h-6 ' />
-                            <input type="text" placeholder="Search" className='border-0 rounded-md opacity-40 border-transparent focus:border-transparent focus:ring-0' />
+                            <input type="text" placeholder="Search" className='rounded-md opacity-40 border-transparent outline-0' />
                         </div>
                         <div className='flex gap-5 justify-between md:justify-normal'>
-                            <Link href=''><Button className='gap-2 text-white bg-primary-500 p-2 md:p-3 rounded-xl' ><img src="/image/svg/export.svg" alt="" />Export</Button></Link>
+                            <Button onClick={handlePrint} className='gap-2 text-white bg-primary-500 p-2 md:p-3 rounded-xl' ><img src="/image/svg/export.svg" alt="" />Export</Button>
                         </div>
                     </div>
-                    <div className='pt-8 w-full'>
+                    <div ref={componentRef}  className='pt-8 w-full'>
 
                         {/* Table for Tablet > */}
-                        <table className='w-full hidden md:table text-[#16151C]'>
+                        <table  className='w-full hidden md:table text-[#16151C]'>
                             <thead className='text-[#A2A1A8] font-light'>
                                 <tr className='border-b'>
                                     <td className='py-3 pe-3'>Employee Name</td>

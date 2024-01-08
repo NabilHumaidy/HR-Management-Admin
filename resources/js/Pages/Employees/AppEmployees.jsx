@@ -16,9 +16,9 @@ export default function AppEmployees({auth}) {
             >
                 <div className='h-full border p-5 rounded-xl'>
                     <div className='flex flex-col md:flex-row justify-between'>
-                        <div className='flex rounded-lg border items-center mb-3 md:mb-0'>
+                        <div className='flex rounded-lg border items-center mb-3 md:mb-0 gap-2'>
                             <img src="/image/svg/search.svg" alt="" className='pl-[10px] h-6 ' />
-                            <input type="text" placeholder="Search" className='border-0 rounded-md opacity-40 border-transparent focus:border-transparent focus:ring-0' />
+                            <input type="text" placeholder="Search" className='rounded-md opacity-40 border-transparent outline-0' />
                         </div>
                         <div className='flex gap-5 justify-between md:justify-normal'>
                             <Link href='employees/add'><Button className='gap-2 text-white bg-primary-500 p-2 md:p-3 rounded-xl' startContent={<HiOutlinePlusCircle size={25}/>}>Add New Employee</Button></Link>
