@@ -13,7 +13,12 @@ class DashboardController extends Controller
         return Inertia::render('Dashboard');
     }
     public function employees(){
-        return Inertia::render('Employees/AppEmployees');
+        $employees = User::all();
+        $departments = Department::all();
+        return Inertia::render('Employees/AppEmployees',[
+            'employees' => $employees,
+            'departments'=>$departments
+        ]);
     }
     public function departments(){
         $departments = Department::all();

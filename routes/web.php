@@ -35,6 +35,7 @@ Route::get('/', function () {
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/dashboard/employees', [DashboardController::class, 'employees'])->middleware(['auth', 'verified'])->name('employees');
+Route::get('/dashboard/employees/show/{id}', [EmployeesController::class, 'show'])->middleware(['auth', 'verified'])->name('showemployees');
 Route::get('/dashboard/employees/add', [EmployeesController::class, 'index'])->middleware(['auth', 'verified'])->name('addemployees');
 Route::post('/dashboard/employees/add', [EmployeesController::class, 'store'])->middleware(['auth', 'verified'])->name('storeemployees');
 

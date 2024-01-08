@@ -20,7 +20,7 @@ export const SideBar = () => {
                             <NavLink />
                         </div>
                     </div>
-                    <div className='flex justify-center rounded-br-md rounded-bl-md bg-[#A2A1A80D]'>
+                    <div className='flex justify-center rounded-br-md rounded-bl-md bg-[#A2A1A80D] pb-4 md:pb-3'>
                         <label htmlFor="Toggle3" className="inline-flex items-center rounded-lg cursor-pointer bg-[#A2A1A80D]">
                             <input id="Toggle3" type="checkbox" className="hidden peer" />
                             <span className="px-4 py-2 rounded-lg bg-primary-500 peer-checked:bg-[#A2A1A80D] flex gap-2"><object data='/image/svg/lightOutline.svg' className='stroke-white'/>Light</span>

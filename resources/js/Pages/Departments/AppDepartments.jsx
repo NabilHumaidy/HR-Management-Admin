@@ -9,6 +9,7 @@ export default function AppDepartments({auth, errors, departments, employee}) {
     let user = auth.user;
     const { props } = usePage();
     const flashMessage = props.flash.message;
+
     const [isAlert, setIsAlert] = useState(true);
 
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
@@ -27,7 +28,6 @@ export default function AppDepartments({auth, errors, departments, employee}) {
         setData(formData);
     
         router.post('/dashboard/departments/add', formData);
-        setDepartmentName('');
     }
 
     console.log('last props: ', props);
@@ -66,22 +66,31 @@ export default function AppDepartments({auth, errors, departments, employee}) {
                                         </div>
                                         <div className='pt-5 flex flex-col gap-4'>
                                             {employee ? employee.map((karyawan, j) => {
-                                                return(
-                                                    <Link key={j} className='flex justify-between items-center'>
-                                                        <div className='flex gap-2 items-center'>
-                                                            <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
-                                                            <div className='flex flex-col'>
-                                                                <p>{karyawan.name}</p>
-                                                                <p className='text-xs text-[#A2A1A8]'>CEO</p>
+                                                console.log(karyawan);
+                                                // Check apakah department.id sama dengan karyawan.department
+                                                if (department.id == karyawan.department) {
+                                                    return (
+                                                        <Link key={j} href={`/dashboard/employees/show/${karyawan.id}`} className='flex justify-between items-center'>
+                                                            <div className='flex gap-2 items-center'>
+                                                                <Avatar src={`/uploads/Photo Profile/${karyawan.photoProfile ? karyawan.photoProfile : 'defaultAvatar.JPG'}`} />
+                                                                <div className='flex flex-col'>
+                                                                    <p>
+                                                                        {`${karyawan.firstName} ${karyawan.lastName}`}
+                                                                    </p>
+                                                                    <p className='text-xs text-[#A2A1A8]'>
+                                                                        {karyawan.designation}
+                                                                    </p>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div>
-                                                            <FaAngleRight />
-                                                        </div>
-                                                    </Link>
-                                                );
+                                                            <div>
+                                                                <FaAngleRight />
+                                                            </div>
+                                                        </Link>
+                                                    );
+                                                } else {
+                                                    return null; // Jika tidak sesuai, kembalikan null
+                                                }
                                             }) : 'Tidak ada Data'}
-                                            
                                         </div>
                                     </div>
                                 )

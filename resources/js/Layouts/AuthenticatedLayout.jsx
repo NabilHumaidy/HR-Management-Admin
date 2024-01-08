@@ -32,6 +32,7 @@ export default function Authenticated({ user, header, headerAlt,children }) {
 
     // Menghapus kelas text-sans jika ada
     document.body.classList.remove('font-sans', 'antialiased');
+    
     return (
         <>
             <div className="flex h-screen flex-col md:flex-row">

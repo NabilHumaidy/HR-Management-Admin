@@ -1,15 +1,32 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from '@inertiajs/react';
 import { Avatar } from '@nextui-org/react';
 import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
 export default function Navbar(account) {
     let user = account.account;
+    const [time, setTime] = useState(new Date());
+
+    useEffect(() => {
+        // Memperbarui waktu setiap detik
+        const intervalID = setInterval(() => {
+            setTime(new Date())
+        }, 1000)
+
+        return () => clearInterval(intervalID)
+    }, [])
+
+    const hours = time.getHours().toString().padStart(2, '0');
+    const minutes = time.getMinutes().toString().padStart(2, '0');
+    const seconds = time.getSeconds().toString().padStart(2, '0');
+
     return (
         <>
-            <div className="hidden md:flex sm:items-center sm:ms-6 pr-[30px]">
+            <div className="hidden md:flex sm:items-center items-center sm:ms-6 pr-[30px]">
+                <div className='p-2'>
+                    <h1 className='text-primary-500 text-lg'>{`${hours}:${minutes}:${seconds}`}</h1>
+                </div>
                 <div className='inline-flex rounded-lg border'>
-                    <img src="/image/svg/search.svg" alt="" className='pl-[10px]' />
                     <img src="/image/svg/search.svg" alt="" className='pl-[10px]' />
                     <input type="text" placeholder="Search" className='border-0 rounded-md opacity-40 border-transparent focus:border-transparent focus:ring-0' />
                 </div>
@@ -19,16 +36,16 @@ export default function Navbar(account) {
                     </div>
                     <Dropdown>
                         <Dropdown.Trigger>
-                            <span className="inline-flex rounded-md">
+                            <span className="inline-flex rounded-lg border border-[#A2A1A833] p-1">
                                 <Avatar src="https://i.pravatar.cc/150?u=a04258a2462d826712d" className='rounded-md' />
                                 <button
                                     type="button"
-                                    className="inline-flex items-center px-[5px] pb-[15px] border border-transparent  leading-4 font-medium rounded-md text-base bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+                                    className="inline-flex items-center  border border-transparent  leading-4 font-medium rounded-md text-base bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                 >   
                                 <div className='flex flex-col'>
-                                    {user.name}
-                                    <div className='text-gray-400 opacity-60'>
-                                    {user.role}
+                                    {user.firstName} {user.lastName}
+                                    <div className='text-[#A2A1A8] font-light text-xs pt-1 ps-2'>
+                                    {user.designation}
                                     </div>
                                     </div>
                                     <svg
