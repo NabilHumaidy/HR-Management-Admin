@@ -97,7 +97,7 @@ export default function AppDepartments({auth, errors, departments, employee}) {
                             })}
 
                         </div>
-                    <Modal backdrop={'blur'} isOpen={isOpen} onOpenChange={onOpenChange} size={'sm'} isDismissable={false}>
+                    <Modal backdrop={'blur'} isOpen={isOpen} onOpenChange={onOpenChange} size={'sm'} isDismissable={false} className="bg-white border border-solid rounded-xl">
                         <ModalContent>
                         {(onClose) => (
                             <>
@@ -126,10 +126,10 @@ export default function AppDepartments({auth, errors, departments, employee}) {
                                 }
 
                                 <div className="flex justify-center gap-[11px] p-5 w-full">
-                                    <Button className="border rounded-lg bg-transparent w-full" onPress={onClose}>
+                                    <Button className="border rounded-lg bg-transparent w-full p-[10px]" onPress={onClose}>
                                         Close
                                     </Button>
-                                    <Button className="bg-primary-500 border rounded-lg w-full text-white" onClick={() => handleSubmit()}>
+                                    <Button className="bg-primary-500 border rounded-lg w-full text-white p-[10px]" onClick={() => handleSubmit()}>
                                         Add
                                     </Button>
                                 </div>
