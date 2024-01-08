@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\EmployeesController;
+use App\Http\Controllers\HolidaysController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,7 @@ Route::get('/', function () {
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/dashboard/employees', [DashboardController::class, 'employees'])->middleware(['auth', 'verified'])->name('employees');
+Route::get('/dashboard/employees/show/{id}', [EmployeesController::class, 'show'])->middleware(['auth', 'verified'])->name('showemployees');
 Route::get('/dashboard/employees/add', [EmployeesController::class, 'index'])->middleware(['auth', 'verified'])->name('addemployees');
 Route::post('/dashboard/employees/add', [EmployeesController::class, 'store'])->middleware(['auth', 'verified'])->name('storeemployees');
 
@@ -46,7 +48,10 @@ Route::get('/dashboard/payroll', [DashboardController::class, 'payroll'])->middl
 Route::get('/dashboard/jobs', [DashboardController::class, 'jobs'])->middleware(['auth', 'verified'])->name('jobs');
 Route::get('/dashboard/candidates', [DashboardController::class, 'candidates'])->middleware(['auth', 'verified'])->name('candidates');
 Route::get('/dashboard/leaves', [DashboardController::class, 'leaves'])->middleware(['auth', 'verified'])->name('leaves');
+
 Route::get('/dashboard/holidays', [DashboardController::class, 'holidays'])->middleware(['auth', 'verified'])->name('holidays');
+Route::post('/dashboard/holidays/add', [HolidaysController::class, 'store'])->middleware(['auth', 'verified'])->name('storeholidays');
+
 Route::get('/dashboard/settings', [DashboardController::class, 'settings'])->middleware(['auth', 'verified'])->name('settings');
 
 
