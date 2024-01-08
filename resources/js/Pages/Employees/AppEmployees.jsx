@@ -1,10 +1,11 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link, router, useForm } from '@inertiajs/react';
 import { HiOutlinePlusCircle } from "react-icons/hi2";
-import { TbAdjustmentsHorizontal } from "react-icons/tb";
+import { TbAdjustmentsHorizontal, TbTrash } from "react-icons/tb";
 import { Button, Pagination, Avatar, Input } from "@nextui-org/react";
 import { useEffect, useState } from 'react';
 import { LuEye, LuDownload } from "react-icons/lu";
+import { BiEditAlt } from "react-icons/bi";
 
 export default function AppEmployees({auth, employees, departments}) {
     const [searchTerm, setSearchTerm] = useState('');
@@ -69,7 +70,11 @@ export default function AppEmployees({auth, employees, departments}) {
                                         <td className='py-1 pe-3'>{employee.designation}</td>
                                         <td className='py-1 pe-3'>{employee.employeeType}</td>
                                         <td className='py-1 pe-3'><span className="inline-flex items-center rounded-md bg-[#7152F31A] px-2 py-1 text-sm font-light text-primary-500 ring-1 ring-inset ring-gray-500/10">{employee.status}</span></td>
-                                        <td className='py-1 pe-3'><Link href={`/dashboard/employees/show/${employee.id}`} className='cursor-pointer hover:text-primary-500'><LuEye className='hover:scale-125' size={23}/></Link></td>
+                                        <td className='py-1 pe-3 flex gap-2 items-center'>
+                                            <Link href={`/dashboard/employees/show/${employee.id}`} className='cursor-pointer hover:text-primary-500'><LuEye className='hover:scale-125' size={23}/></Link>
+                                            <Link href={`/dashboard/employees/edit/${employee.id}`} className='cursor-pointer hover:text-primary-500'><BiEditAlt className='hover:scale-125' size={23}/></Link>
+                                            <Link href={`/dashboard/employees/edit/${employee.id}`} className='cursor-pointer hover:text-primary-500'><TbTrash className='hover:scale-125' size={23}/></Link>
+                                        </td>
                                     </tr>
                                 ))}
                                 {/* {employees && employees.map((employee, i) => (
