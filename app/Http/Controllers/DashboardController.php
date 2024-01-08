@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Inertia\Inertia;
 use App\Models\Department;
+use App\Models\Holidays;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,12 @@ class DashboardController extends Controller
         return Inertia::render('Dashboard');
     }
     public function employees(){
-        return Inertia::render('Employees/AppEmployees');
+        $employees = User::all();
+        $departments = Department::all();
+        return Inertia::render('Employees/AppEmployees',[
+            'employees' => $employees,
+            'departments'=>$departments
+        ]);
     }
     public function departments(){
         $departments = Department::all();
@@ -36,7 +42,8 @@ class DashboardController extends Controller
         return Inertia::render('Leaves/AppLeaves');
     }
     public function holidays(){
-        return Inertia::render('Holidays/AppHolidays');
+        $holidays = Holidays::orderBy('date', 'desc')->get();
+        return Inertia::render('Holidays/AppHolidays', ['holidayss' => $holidays]);
     }
     public function settings(){
         return Inertia::render('Settings/AppSettings');
